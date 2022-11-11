@@ -1,16 +1,34 @@
+.short{
+  display: inline-block;
+}
+.long{
+  display: none;
+}
+
+#flowersFromTheFarm{
+  width:15rem;
+  max-width: 70vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+#flowersFromTheFarm img{
+  width:100%;
+}
+
 *{
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+  caret-color: transparent;
 }
-
-
-
 body{
   overflow-x: hidden;
 }
 
-/* Main title */
 h1 {
   font-family: Times New Roman;
   font-size: 25pt;
@@ -19,7 +37,10 @@ h1 {
 
   margin: auto;
   padding-top: .5em;
-  /* width: 50%; */
+  padding-bottom: 1rem;
+
+  cursor: default;
+  transition-duration: .5s;
 }
 
 /* Subject Title */
@@ -29,9 +50,10 @@ h2 {
   color: #303030;
   font-size: 20pt;
   text-align: center;
+  text-transform: capitalize;
 
   margin: auto;
-  padding-top: .25em;
+  padding-top: 2rem;
   width: 70%;
 }
 
@@ -40,46 +62,75 @@ h2 {
 }
 
 h3 {
-  font-family: Segoe UI;
+  font-family: Segoe UI, Open Sans , arial;
   font-style: regular;
   font-weight: 400;
   font-size: 14pt;
   color: #707070;
   text-align: center;
-  /* width: 50%; */
-
-  /* margin: auto; */
   padding-top: 0rem;
-  margin-bottom: 2em;
+  margin-bottom: 0rem;
 }
 
 .normal {
-  font-family: Segoe UI;
-  font-size: 16pt;
-  color: #707070;
+  font-family: Segoe UI, Open Sans , arial;
+  font-size: 16px;
+  color: #595959;
   text-align: center;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-top: .5rem;
-  margin-bottom: 8rem;
+
+  max-width: 70ch;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  margin: 0rem auto 10rem;
 }
 
+/* Auto Scrol adjust */
+#Pricing h2{
+  padding-top: 40pt;
+  margin-top: -40pt;
+}
 
+#Welcome h2{
+  padding-top: 40pt;
+  margin-top: -40pt;
+}
 
+#Gallery {
+  padding-top: 40pt;
+  margin-top: -40pt;
+}
 
+#Care {
+  padding-top: 40pt;
+  margin-top: -40pt;
+}
+
+#Christmas {
+  padding-top: 40pt;
+  margin-top: -40pt;
+}
+
+#Weddings {
+  padding-top: 40pt;
+  margin-top: -40pt;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 
 /* Top slideshow bar */
 .img-container {
-  margin-top: 1rem;
+  margin-top: 0rem;
   height: 33vw;
+  max-height: 25rem;
   overflow: hidden;
   position: relative;
   width: 100vw;
 }
 
 .img-container img {
-
   left: 0;
   object-fit: cover;
   object-position: center -2vw;
@@ -102,7 +153,7 @@ h3 {
 
 .img-container img.fade-out {
   opacity: 0;
-  /* Speed of the transition */
+
   transition: visibility 0s 1.5s, opacity 1.5s linear;
   visibility: hidden;
 }
@@ -112,31 +163,32 @@ h3 {
 .pcontainer{
   margin-left: auto;
   margin-right: auto;
+  width: 95vw;
 
   display: flex;
   flex-wrap: wrap;
   flex-flow: wrap;
   align-items: flex-start;
   justify-content: space-between;
-
-  width: 95vw;
 }
+
 .item {
   text-align: center;
   width: 48%;
   margin-bottom: 25px;
   font-size: 12pt;
-  font-family: Segoe UI;
+  font-family: Segoe UI, Open Sans , arial;
   color: #707070;
-  /* background: blue; */
 }
 
 .item img {
   width: 100%;
+  height: auto;
+  box-shadow: 0 0 12px black;
 }
 
 .price{
-  font-family: Segoe UI;
+  font-family: Segoe UI, Open Sans , arial;
   font-weight: bold;
   font-size: 14pt;
   color: #707070;
@@ -149,30 +201,34 @@ h3 {
   font-size: 13pt;
 }
 
-.large2{
+.large_img{
 
-  background-position: center;
-  /* background-repeat: no-repeat; */
-  background-size: cover;
-
+  object-position: center;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height: 95vw;
-  width: 95vw;
+
+  width: 90vw;
+  max-width: 65rem;
 }
 
-#Weddings .large2{
-  background-image: url(img/filler.jpg);
+.large_img img{
+  object-fit:cover;
+  object-position: top;
+  width: 100%;
+  max-height: 35rem;
+  box-shadow: 0 0 12px black;
 }
 
-#Postage .large2{
-  background-image: url(img/filler.jpg);
+::selection {
+  background: #fff0fc;
+  color: #f041c4;
+}
+::-moz-selection {
+  background: #fff0fc;
+  color: #f041c4;
 }
 
-#Care .large2{
-  background-image: url(img/filler.jpg);
-}
 
 @media only screen and (min-width: 330px){
   .small_email{
@@ -180,16 +236,43 @@ h3 {
     color: #707070;
     font-size: 16pt;
   }
+
+  .normal {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+
 }
+
+@media only screen and (min-width: 450px){
+
+  .short{
+    display: none;
+  }
+  .long{
+    display: inline-block;
+  }
+
+}
+
 
 @media only screen and (min-width: 768px){
+
+  .normal{
+    font-size: 22px;
+  }
+
+  .small_email{
+    font-size: 18pt;
+  }
+
 h1 {
   font-size: 50pt;
+  transition-duration: .5s;
 }
 
-.img-container {
-  height: 500px;
-}
+
 
 h2{
   font-size: 30pt;
@@ -201,40 +284,17 @@ h3 {
   color: #707070;
   text-align: center;
 
-  /* margin: auto; */
   padding-top: 0.5rem;
-  margin-bottom: 3rem;
 }
 
-.normal {
-  font-size: 18pt;
-  max-width: 70ch;
-
-  margin: 0rem auto 10rem;
-}
-
-.large{
-    max-height: 35rem;
-}
-.large img{
-  width: 70%;
-  max-width: 1100px;
-
-}
-
-.large2{
-  height: 70vw;
-  max-height: 35rem;
-  width:70%;
-  max-width: 1100px;
-}
 
 
 .pcontainer{
-  width: 80%;
+  width: 90vw;
+  max-width: 65rem;
 }
 .item {
-  width: 32%;
+  width: 48%;
   font-size: 14pt;
 }
 
@@ -251,4 +311,6 @@ h3 {
   object-position: center -2vw;
 }
 
+.menu_gap {
+height: 26pt;
 }
